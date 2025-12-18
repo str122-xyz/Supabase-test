@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Colors.indigoAccent,
+        backgroundColor: Color(0xFF8A7FA8),
         elevation: 0,
       ),
       body: Center(
@@ -92,31 +92,36 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: [
-                      Container(
-                        height: 250,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.grey.shade300),
-                        ),
-                        child: _publicImageUrl != null
-                            ? ClipRRect(
-                                borderRadius: BorderRadius.circular(12),
-                                child: Image.network(
-                                  _publicImageUrl!,
-                                  fit: BoxFit.cover,
-                                  loadingBuilder:
-                                      (context, child, loadingProgress) {
-                                        if (loadingProgress == null)
-                                          return child;
-                                        return const Center(
+                      _publicImageUrl != null
+                          ? ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.network(
+                                _publicImageUrl!,
+                                width: double.infinity,
+                                fit: BoxFit.contain,
+                                loadingBuilder:
+                                    (context, child, loadingProgress) {
+                                      if (loadingProgress == null) return child;
+                                      return Container(
+                                        height: 250,
+                                        width: double.infinity,
+                                        color: Colors.grey[200],
+                                        child: const Center(
                                           child: CircularProgressIndicator(),
-                                        );
-                                      },
-                                ),
-                              )
-                            : Column(
+                                        ),
+                                      );
+                                    },
+                              ),
+                            )
+                          : Container(
+                              height: 250,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(color: Colors.grey.shade300),
+                              ),
+                              child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(
@@ -131,14 +136,14 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ],
                               ),
-                      ),
+                            ),
                       const SizedBox(height: 20),
 
                       if (_isUploading)
                         Column(
                           children: [
                             LinearProgressIndicator(
-                              color: Colors.indigoAccent,
+                              color: Color(0xFF8A7FA8),
                               backgroundColor: Colors.indigo.shade100,
                             ),
                             SizedBox(height: 8),
@@ -157,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                               style: TextStyle(fontSize: 16),
                             ),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.indigoAccent,
+                              backgroundColor: Color(0xFF8A7FA8),
                               foregroundColor: Colors.white,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -191,7 +196,7 @@ class _HomePageState extends State<HomePage> {
                             "Public URL:",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.indigo,
+                              color: Color(0xFF8A7FA8),
                             ),
                           ),
                         ],

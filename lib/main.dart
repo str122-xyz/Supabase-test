@@ -19,6 +19,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Supabase Image Test', home: const HomePage());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Supabase Image Test',
+      home: const HomePage(),
+    );
   }
 }
