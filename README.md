@@ -61,8 +61,8 @@ Agar aplikasi berjalan lancar, pastikan kamu sudah mengatur Supabase Dashboard s
 ## 📸 Screenshots
 
 <div style="display:flex; gap:10px; flex-wrap:wrap">
-  <img src="ssan1.png" width="250"/>
-  <img src="ssan2.png" width="250"/>
+  <img src="ssan1.png"/>
+  <img src="ssan2.png"/>
 </div>
 
 ---
