@@ -190,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Row(
                         children: const [
-                          Icon(Icons.link, size: 18, color: Colors.indigo),
+                          Icon(Icons.link, size: 18, color: Color(0xFF8A7FA8)),
                           SizedBox(width: 8),
                           Text(
                             "Public URL:",
